@@ -1,0 +1,257 @@
+/* Container with styled background and shadow */
+:host {
+    position: relative;
+    display: block;
+    background: linear-gradient(135deg, #f0fff0, #ffffff);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 30px 40px;
+    max-width: 600px;
+    margin: 60px auto;
+    box-shadow: 0 12px 30px rgba(0, 128, 0, 0.15);
+    border-radius: 18px;
+    z-index: 1;
+    overflow: hidden;
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+/* Decorative glowing blobs */
+:host::before,
+:host::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    z-index: -1;
+    filter: blur(50px);
+    opacity: 0.5;
+    animation: float 6s ease-in-out infinite alternate;
+}
+
+:host::before {
+    width: 350px;
+    height: 350px;
+    top: -120px;
+    left: -100px;
+    background: radial-gradient(circle, #a5d6a7, #e8f5e9);
+}
+
+:host::after {
+    width: 280px;
+    height: 280px;
+    bottom: -100px;
+    right: -80px;
+    background: radial-gradient(circle, #81c784, #c8e6c9);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    100% {
+        transform: translateY(20px);
+    }
+}
+
+/* Heading */
+h2 {
+    color: #2e7d32;
+    text-align: center;
+    margin-bottom: 26px;
+    font-size: 28px;
+}
+
+/* Form layout */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* General Inputs and Selects */
+input,
+select {
+    padding: 12px 14px;
+    border: 1px solid #c8e6c9;
+    border-radius: 10px;
+    font-size: 16px;
+    background-color: #fff;
+    transition: all 0.3s ease;
+    box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.04);
+}
+
+input:focus,
+select:focus {
+    border-color: #43a047;
+    box-shadow: 0 0 8px rgba(67, 160, 71, 0.3);
+    outline: none;
+}
+
+/* Area + Unit Field Group */
+.area-unit-group {
+    display: flex;
+    gap: 10px;
+}
+
+.area-unit-group input,
+.area-unit-group select {
+    flex: 1;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 10px;
+    border: 1px solid #c8e6c9;
+    background-color: #fff;
+    transition: all 0.3s ease;
+    box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.04);
+}
+
+.area-unit-group input:focus,
+.area-unit-group select:focus {
+    border-color: #43a047;
+    box-shadow: 0 0 8px rgba(67, 160, 71, 0.3);
+    outline: none;
+}
+
+/* Buttons */
+button {
+    padding: 12px;
+    background-color: #4caf50;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s;
+    box-shadow: 0 4px 14px rgba(76, 175, 80, 0.3);
+}
+
+button:hover {
+    background-color: #388e3c;
+    transform: scale(1.02);
+}
+
+/* Special style for "show password" or OTP buttons */
+button[type="button"] {
+    background-color: #81c784;
+}
+
+button[type="button"]:hover {
+    background-color: #66bb6a;
+}
+
+/* Error and success messages */
+.error {
+    color: #d32f2f;
+    font-size: 14px;
+    margin-top: -6px;
+}
+
+.success {
+    color: #2e7d32;
+    font-size: 14px;
+}
+
+/* Links */
+a {
+    color: #2e7d32;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: #1b5e20;
+    text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    :host {
+        padding: 24px 20px;
+        margin: 30px 10px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    input,
+    select,
+    button {
+        font-size: 15px;
+    }
+
+    .area-unit-group {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .password-group {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 10px;
+    }
+
+    .password-group input {
+        flex: 1;
+        padding: 10px;
+        font-size: 16px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+    }
+
+    .password-group button {
+        padding: 10px 12px;
+        font-size: 14px;
+        background-color: #81c784;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+
+    .password-group button:hover {
+        background-color: #66bb6a;
+    }
+
+    .area-unit-group {
+        display: flex;
+        gap: 8px;
+        margin-bottom: 10px;
+    }
+
+    .go-login-center {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .go-login-center button {
+        background-color: #2196f3;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .go-login-center button:hover {
+        background-color: #1976d2;
+    }
+}

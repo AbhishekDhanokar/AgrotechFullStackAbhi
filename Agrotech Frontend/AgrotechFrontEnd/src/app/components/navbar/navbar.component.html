@@ -1,0 +1,17 @@
+<header>
+    <div class="logo">
+        <img [src]="logoPath()" [alt]="logoAlt()">
+    </div>
+
+    <nav class="Item">
+        <ng-container *ngFor="let link of navLinks()">
+            <a *ngIf="link.isRouterLink; else external" [routerLink]="link.route"
+                [ngClass]="{'highlight-link': link.label === 'login/Signup'}">
+                {{ link.label }}
+            </a>
+            <ng-template #external>
+                <a [href]="link.route" target="_blank" rel="noopener noreferrer">{{ link.label }}</a>
+            </ng-template>
+        </ng-container>
+    </nav>
+</header>

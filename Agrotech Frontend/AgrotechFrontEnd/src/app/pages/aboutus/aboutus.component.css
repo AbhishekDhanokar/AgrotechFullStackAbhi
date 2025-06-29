@@ -1,0 +1,51 @@
+.about-section {
+    padding: 2rem;
+    text-align: center;
+}
+
+.about-section img {
+    max-width: 100%;
+    height: auto;
+    margin: 1rem 0;
+    border-radius: 10px;
+}
+
+.mission-vision-values {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem;
+    background-color: #f9f9f9;
+}
+
+.mvv-box {
+    flex: 1 1 280px;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    background-color: #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.mvv-box h3 {
+    color: #388e3c;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+}
+
+.mvv-box h3.clickable:hover {
+    text-decoration: underline;
+}
+
+.mvv-box button {
+    margin-top: 0.5rem;
+    padding: 5px 10px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+}

@@ -1,0 +1,21 @@
+<form (ngSubmit)="login()" #loginForm="ngForm" class="login-form">
+    <h2>Login</h2>
+
+    <input type="email" placeholder="Email" [(ngModel)]="loginData.email" name="email" required />
+
+    <input [type]="showPassword ? 'text' : 'password'" placeholder="Password" [(ngModel)]="loginData.password"
+        name="password" required />
+
+    <button type="button" (click)="togglePasswordVisibility()">
+        {{ showPassword ? 'Hide' : 'Show' }} Password
+    </button>
+
+    <button type="submit" [disabled]="loginForm.invalid">Login</button>
+
+    <p *ngIf="loginError" style="color: red;">{{ loginError }}</p>
+
+    <p>
+        Don't have an account?
+        <a routerLink="/register">Register here</a>
+    </p>
+</form>

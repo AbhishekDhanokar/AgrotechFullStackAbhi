@@ -1,0 +1,5 @@
+package com.agrotech.AgrotechBackend.dto;
+
+public class UserDTO {
+
+}

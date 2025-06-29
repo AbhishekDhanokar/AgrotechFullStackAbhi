@@ -1,0 +1,31 @@
+<app-navbar></app-navbar>
+<main>
+    <section class="section">
+        <h1>Exclusive Deals</h1>
+        <p>Discover the best deals on essential tools and advanced agricultural technologies. Save big today!</p>
+
+        <!-- Discount Filter -->
+        <div class="filter-bar">
+            <label>Filter by Minimum Discount:</label>
+            <select><--!(change)="setDiscountFilter($event.target.value)-- <option value="0">All</option>
+                    <option value="20">20% or more</option>
+                    <option value="30">30% or more</option>
+                    <option value="40">40% or more</option>
+            </select>
+        </div>
+
+        <div class="deals-container">
+            <div class="deal-card" *ngFor="let deal of filteredDeals()">
+                <img [src]="deal.image" [alt]="deal.name">
+                <div class="deal-card-content">
+                    <h3>{{ deal.name }}</h3>
+                    <p>{{ deal.description }}</p>
+                    <p class="discount">🎯 {{ deal.discount }}% OFF</p>
+                    <button class="cta-button" (click)="buyNow(deal.name)">Buy Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<app-footer></app-footer>

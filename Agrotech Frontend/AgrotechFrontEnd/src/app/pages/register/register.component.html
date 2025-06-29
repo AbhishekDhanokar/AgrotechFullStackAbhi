@@ -1,0 +1,60 @@
+<form (ngSubmit)="register()">
+    <input type="text" placeholder="Full Name" [(ngModel)]="user.fullName" name="fullName" required />
+
+    <input type="email" placeholder="Email" [(ngModel)]="user.email" name="email" required />
+
+    <!-- Password with toggle -->
+    <input [type]="showPassword ? 'text' : 'password'" placeholder="Confirm Password" [(ngModel)]="user.confirmPassword"
+        name="confirmPassword" required />
+
+    <!-- Confirm Password -->
+    <div class="password-group">
+        <input [type]="showPassword ? 'text' : 'password'" placeholder="Password" [(ngModel)]="user.password"
+            name="password" required />
+        <button type="button" (click)="togglePasswordVisibility()">
+            {{ showPassword ? 'Hide' : 'Show' }}
+        </button>
+    </div>
+
+    <input type="tel" placeholder="+91XXXXXXXXXX" [(ngModel)]="user.phoneNumber" name="phoneNumber" required />
+
+    <div class="form-group">
+        <label for="farmArea">Farm Area</label>
+        <div class="area-unit-group">
+            <input type="number" id="farmArea" [(ngModel)]="farmArea.value" name="farmValue" placeholder="Enter area"
+                required />
+            <select [(ngModel)]="farmArea.unit" name="farmUnit" required>
+                <option value="" disabled selected>Select Unit</option>
+                <option *ngFor="let unit of areaUnits" [value]="unit">{{ unit }}</option>
+            </select>
+        </div>
+    </div>
+
+    <select [(ngModel)]="user.language" name="language">
+        <option *ngFor="let lang of languages" [value]="lang">{{ lang }}</option>
+    </select>
+
+    <select [(ngModel)]="user.farmingType" name="farmingType">
+        <option *ngFor="let type of farmingTypes" [value]="type">{{ type }}</option>
+    </select>
+
+    <select [(ngModel)]="user.state" name="state" (change)="loadDistricts(user.state)">
+        <option *ngFor="let state of states" [value]="state">{{ state }}</option>
+    </select>
+
+    <select [(ngModel)]="user.district" name="district">
+        <option *ngFor="let d of districts" [value]="d">{{ d }}</option>
+    </select>
+
+    <button type="button" (click)="sendOtp()">Send OTP</button>
+
+    <div *ngIf="otpSent">
+        <input type="text" placeholder="Enter OTP" [(ngModel)]="otp" name="otp" required />
+        <button type="submit">Register</button>
+    </div>
+
+    <div class="go-login">
+        <button type="button" routerLink="/login">Go to Login</button>
+    </div>
+
+</form>

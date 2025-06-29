@@ -1,0 +1,114 @@
+package com.agrotech.AgrotechBackend.dto;
+
+
+public class UserDTO {
+	private String name;
+    private String email;
+    private String password;
+    private String phone;
+    private String state;
+    private String district;
+    private String TypeOfFarming;
+    private String LandArea;
+    private String PreferredLanguage;
+    
+    public UserDTO(){}
+
+	public UserDTO(String name, String email, String password, String phone, String state, String district,
+			String typeOfFarming, String landArea, String preferredLanguage) {
+		super();
+		this.name = name;
+		this.email = email;
+		this.password = password;
+		this.phone = phone;
+		this.state = state;
+		this.district = district;
+		this.TypeOfFarming = typeOfFarming;
+	    this.LandArea = landArea;
+		this.PreferredLanguage = preferredLanguage;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public String getPhone() {
+		return phone;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+
+	public String getState() {
+		return state;
+	}
+
+	public void setState(String state) {
+		this.state = state;
+	}
+
+	public String getDistrict() {
+		return district;
+	}
+
+	public void setDistrict(String district) {
+		this.district = district;
+	}
+
+	public String getTypeOfFarming() {
+		return TypeOfFarming;
+	}
+
+	public void setTypeOfFarming(String typeOfFarming) {
+		TypeOfFarming = typeOfFarming;
+	}
+
+	public String getLandArea() {
+		return LandArea;
+	}
+
+	public void setLandArea(String landArea) {
+		LandArea = landArea;
+	}
+
+	public String getPreferredLanguage() {
+		return PreferredLanguage;
+	}
+
+	public void setPreferredLanguage(String preferredLanguage) {
+		PreferredLanguage = preferredLanguage;
+	}
+
+	@Override
+	public String toString() {
+		return "UserDTO [name=" + name + ", email=" + email + ", password=" + password + ", phone=" + phone + ", state="
+				+ state + ", district=" + district + ", TypeOfFarming=" + TypeOfFarming + ", LandArea=" + LandArea
+				+ ", PreferredLanguage=" + PreferredLanguage + "]";
+	}
+    
+    
+    
+    
+
+}

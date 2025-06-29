@@ -1,0 +1,54 @@
+<app-navbar></app-navbar>
+<main>
+    <!-- Hero Section -->
+    <section class="hero">
+        <img src="assets/image/Hero-Agro.jpg" alt="Farming Technology">
+        <div class="overlay">
+            <h1>Welcome to Agro-Tech</h1>
+            <p>Innovating Agriculture for a Sustainable Future</p>
+            <button class="cta-button" (click)="scrollToSection('features')">Explore Features</button>
+        </div>
+    </section>
+
+    <!-- Weather Section -->
+    <section id="weather" class="weather">
+        <h2>Current Weather</h2>
+        <button (click)="fetchWeather()">Fetch Weather</button>
+        <div id="weather-info">
+            <p>Click the button to load weather data.</p>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <h2>Why Choose Us?</h2>
+        <div class="feature-grid">
+            <div class="feature-item" *ngFor="let f of features()">
+                <img [src]="f.image" [alt]="f.alt">
+                <h3>{{ f.title }}</h3>
+                <p>{{ f.description }}</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <h2>What Our Clients Say</h2>
+        <div class="testimonial-item" *ngFor="let t of testimonials()">
+            <p>"{{ t.quote }}"</p>
+            <h3>{{ t.author }}</h3>
+        </div>
+    </section>
+
+    <!-- Contact Us Section -->
+    <section class="contact">
+        <h2>Get in Touch</h2>
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" rows="4" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+</main>
+<app-footer></app-footer>

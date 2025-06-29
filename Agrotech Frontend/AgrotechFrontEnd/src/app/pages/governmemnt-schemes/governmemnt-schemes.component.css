@@ -1,0 +1,35 @@
+.govt-schemes-section {
+    padding: 2rem;
+    text-align: center;
+    background-color: #f4f9f4;
+    border-radius: 10px;
+    margin: 2rem;
+}
+
+.govt-schemes-section h1 {
+    color: #2e7d32;
+    margin-bottom: 1rem;
+}
+
+.govt-schemes-section p {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+}
+
+.visit-button {
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: 600;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+
+    .visit-button:hover {
+        background-color: #388e3c;
+    }
+}

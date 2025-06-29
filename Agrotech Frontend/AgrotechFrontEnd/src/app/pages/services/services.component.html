@@ -1,0 +1,19 @@
+<app-navbar></app-navbar>
+<main>
+    <section class="section">
+        <h1>{{ mainService().title }}</h1>
+        <img [src]="mainService().image" alt="Services">
+        <p>{{ mainService().description }}</p>
+    </section>
+
+    <section class="service-specifications">
+        <div class="spec" *ngFor="let service of serviceList()">
+            <img [src]="service.image" [alt]="service.title">
+            <h3>{{ service.title }}</h3>
+            <p>{{ service.description }}</p>
+            <a *ngIf="service.contact" [href]="service.contact">📞 Call Us Now</a>
+        </div>
+    </section>
+</main>
+
+<app-footer></app-footer>

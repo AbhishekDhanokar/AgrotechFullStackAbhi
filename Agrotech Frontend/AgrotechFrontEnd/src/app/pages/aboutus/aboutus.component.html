@@ -1,0 +1,32 @@
+<app-navbar></app-navbar>
+<main>
+    <!-- About Section -->
+    <section class="about-section">
+        <h1>About Us</h1>
+        <img src="assets/image/About Us.png" alt="About Us" />
+        <p>{{ aboutText() }}</p>
+    </section>
+
+    <!-- Mission, Vision, Values -->
+    <section class="mission-vision-values">
+        <div class="mvv-box">
+            <h3 (click)="toggle('mission')" class="clickable">📌 Our Mission</h3>
+            <p *ngIf="showMission()">{{ mission() }}</p>
+            <button (click)="copyText(mission())"></button>
+        </div>
+
+        <div class="mvv-box">
+            <h3 (click)="toggle('vision')" class="clickable">👁️ Our Vision</h3>
+            <p *ngIf="showVision()">{{ vision() }}</p>
+            <button (click)="copyText(vision())"></button>
+        </div>
+
+        <div class="mvv-box">
+            <h3 (click)="toggle('values')" class="clickable">💡 Our Values</h3>
+            <p *ngIf="showValues()">{{ values() }}</p>
+            <button (click)="copyText(values())"></button>
+        </div>
+    </section>
+</main>
+
+<app-footer></app-footer>
