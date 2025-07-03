@@ -1,5 +1,0 @@
-package com.agrotech.AgrotechBackend.controller;
-
-public class AuthResponse {
-
-}
