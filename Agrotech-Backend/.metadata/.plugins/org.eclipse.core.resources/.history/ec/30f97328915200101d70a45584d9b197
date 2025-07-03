@@ -1,0 +1,22 @@
+spring.application.name=AgrotechBackend
+# Server Configuration
+server.port=8080
+
+# MySQL Database Configuration
+spring.datasource.url=jdbc:mysql://localhost:3306/agrotech
+spring.datasource.username=root
+spring.datasource.password=Abhi12@#
+
+# MySQL JDBC Driver
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+
+# JPA / Hibernate Configuration
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL8Dialect
+
+# Console / Debug
+logging.level.org.springframework.security=DEBUG
+twilio.account_sid=AC534c3c1660c2a06066631eed0537b973
+twilio.auth_token=5796a410fbbff65b77a959e6e1151e8a
+twilio.phone_number=+918408090391

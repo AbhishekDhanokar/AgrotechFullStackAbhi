@@ -1,0 +1,5 @@
+package com.agrotech.AgrotechBackend.repository;
+
+public interface UserRepository {
+
+}

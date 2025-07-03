@@ -1,0 +1,5 @@
+package com.agrotech.AgrotechBackend.config;
+
+public class SecurityConfig {
+
+}
