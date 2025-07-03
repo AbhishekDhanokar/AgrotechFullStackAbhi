@@ -1,5 +1,0 @@
-package com.agrotech.AgrotechBackend.service;
-
-public class TwilioService {
-
-}
